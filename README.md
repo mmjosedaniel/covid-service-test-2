@@ -11,3 +11,26 @@ The test is to save each ten minutes the information that comes from a web json 
 The first thing I did was to create an Expres js project.
 
 Since I do not knew about Squelize, I started to look for information about it.
+
+I found video about how to create an app with Express js and Sequelize, I used this video as an example to comprehend how to use Sequelize:
+
+[Build a Node.js App With Sequelize [1] - Connection & Model](https://www.youtube.com/watch?v=bOHysWYMZM0).
+
+The console threw me an error because I am using an old version of MySQL (MySQL 5.5) in a Docker container, therefore I proceeded to look for a container with an newer version of MySQL:
+
+This is the error:
+
+```console
+Server startet at port 3000
+(node:6788) [SEQUELIZE0006] DeprecationWarning: This database engine version is not supported, please update your database server. More information https://github.com/sequelize/sequelize/blob/master/ENGINE.md
+Executing (default): SELECT 1+1 AS result
+Connection has been established successfully.
+```
+
+After implementing a Docker container with MySQL 8.0 the conection was successful:
+
+```console
+Server startet at port 3000
+Executing (default): SELECT 1+1 AS result
+Connection has been established successfully.
+```
