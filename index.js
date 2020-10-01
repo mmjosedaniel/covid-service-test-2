@@ -1,18 +1,14 @@
 const express = require('express');
-const { Sequelize } = require('sequelize');
 const CovidJsonService = require('./CovidJsonService');
 
+// Database
+const db = require('./config/database')
 
 const app = express();
 const PORT = 3000;
 
-// Sequelize:
-const sequelize = new Sequelize('covid_cases', 'root', 'root', {
-	host: 'localhost',
-	dialect: 'mysql'
-});
-
-sequelize.authenticate()
+// Test DB
+db.authenticate()
 	.then(() => console.log('Connection has been established successfully.'))
 	.catch(err => console.error('Unable to connect to the database:', error));
 

@@ -36,4 +36,3 @@ Connection has been established successfully.
 ```
 
 The next step was to create the service to get the COVID-19 API data.
-
