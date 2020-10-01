@@ -39,3 +39,4 @@ Next I followed the next step:
 
 * Create the service to get the COVID-19 API data.
 * Create a model.
+* Added a routes folder and a file for the routes.
