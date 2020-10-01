@@ -35,4 +35,7 @@ Executing (default): SELECT 1+1 AS result
 Connection has been established successfully.
 ```
 
-The next step was to create the service to get the COVID-19 API data.
+Next I followed the next step:
+
+* Create the service to get the COVID-19 API data.
+* Create a model.
