@@ -15,5 +15,6 @@ db.authenticate()
 app.use(require('./routes/CovidCases'));
 
 //Schedule
+setInterval(function(){ console.log("Hello"); }, 3000);
 
 app.listen(PORT, console.log(`Server startet at port ${PORT}`));
