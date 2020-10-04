@@ -14,4 +14,16 @@ db.authenticate()
 // routes
 app.use(require('./routes/CovidCases'));
 
+//Schedule
+const CronJob = require('cron').CronJob;
+const job = new CronJob(
+	'* * * * * *',
+	function() {
+		console.log('You will see this message every second');
+	},
+	null,
+	true,
+	'America/Los_Angeles'
+);
+
 app.listen(PORT, console.log(`Server startet at port ${PORT}`));

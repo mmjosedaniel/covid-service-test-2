@@ -40,3 +40,9 @@ Next I followed the next step:
 * Create the service to get the COVID-19 API data.
 * Create a model.
 * Added a routes folder and a file for the routes.
+
+I had a problem bith my docker container with MySQL, therefore I had to start solving it.
+
+ did not know how to schedule tasks in node, therefore I look for some tool to do it, I found 'Cron' and I proceeded to install it :
+
+[Crone](https://github.com/kelektiv/node-cron).
