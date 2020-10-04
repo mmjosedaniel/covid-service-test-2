@@ -1,5 +1,7 @@
 const fetch = require('node-fetch');
 
+
+
 class CovidJsonService {
     constructor() {
         this.URI = 'https://www.datos.gov.co/resource/gt2j-8ykr.json';

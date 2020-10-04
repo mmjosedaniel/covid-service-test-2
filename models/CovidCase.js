@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('../config/database');
 
-const Covid = db.define('covid', {
+const CovidCase = db.define('covid_cases', {
     id_de_caso: {
         type: Sequelize.STRING
     },
@@ -62,4 +62,4 @@ const Covid = db.define('covid', {
     
 });
 
-module.exports = Covid;
+module.exports = CovidCase;
