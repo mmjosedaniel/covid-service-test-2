@@ -150,3 +150,14 @@ covid_cases {
   isNewRecord: false
 }
 ```
+
+I added some code to check the last value that was added. mi idea is to filter the data from the Json api looking for the entries which id are grater than the last id that I have in my database:
+
+```jsavascript
+const temp = await CovidCase.findAll({
+  limit: 1,
+  order: [ [ 'id', 'DESC' ]]
+  });
+console.log(temp);
+
+```
