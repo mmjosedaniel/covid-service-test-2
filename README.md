@@ -46,3 +46,11 @@ I had a problem bith my docker container with MySQL, therefore I had to start so
  did not know how to schedule tasks in node, therefore I look for some tool to do it, I found 'Cron' and I proceeded to install it :
 
 [Crone](https://github.com/kelektiv/node-cron).
+
+After testing Cron for a while, I realize it was not working appropriately, therefor, I decided to try another dependency. I did not take me much time to find Node Schedule:
+
+[Node Schedule](https://www.npmjs.com/package/node-schedule).
+
+While I was reading the Node Schedule documentation I found that I did not need a dependency but the method setInterval:
+
+*"Node Schedule is for time-based scheduling, not interval-based scheduling. While you can easily bend it to your will, if you only want to do something like "run this function every 5 minutes", **you'll find setInterval much easier to use**, and far more appropriate."*
