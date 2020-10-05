@@ -19,16 +19,29 @@ class CovidJsonService {
     }
 
     async insertNewValuesToDb() {
-        const [{id_de_caso}] = await CovidCase.findAll({
-            limit: 1,
-            order: [ [ 'id_de_caso', 'DESC' ]]
-        });
+        const totalCase = await CovidCase.findAll();
+        console.log(totalCase)
+        let id_de_caso = "0";
+        if (totalCase.length != 0) {
+            [{id_de_caso}] = await CovidCase.findAll({
+                limit: 1,
+                order: [ [ 'id_de_caso', 'DESC' ]]
+            }).catch(err => "0");
+            console.log("IT IS DONE!!!")
+        }
 
-        console.log(id_de_caso);
+        console.log("The last id case was: " + id_de_caso);
 
         const webJsonQuery = await this.fetchCovidCases();
 
-        const newCovidCases = await webJsonQuery.filter(value => parseInt(value["id_de_caso"]) > parseInt(id_de_caso))
+        const newCovidCases = await webJsonQuery.filter(
+                value => 
+                    parseInt(value["id_de_caso"]) > parseInt(id_de_caso)
+            );
+
+        await newCovidCases.map(
+                val => CovidCase.create(val)
+            );
         return newCovidCases;
     }
 }
