@@ -1,6 +1,6 @@
 const fetch = require('node-fetch');
-
-
+const db = require('../config/database');
+const CovidCase = require('../models/CovidCase')
 
 class CovidJsonService {
     constructor() {
@@ -16,6 +16,20 @@ class CovidJsonService {
         const response = await fetch(this.URI);
         const cases = await response.json();
         return cases
+    }
+
+    async insertNewValuesToDb() {
+        const [{id_de_caso}] = await CovidCase.findAll({
+            limit: 1,
+            order: [ [ 'id_de_caso', 'DESC' ]]
+        });
+
+        console.log(id_de_caso);
+
+        const webJsonQuery = await this.fetchCovidCases();
+
+        const newCovidCases = await webJsonQuery.filter(value => parseInt(value["id_de_caso"]) > parseInt(id_de_caso))
+        return newCovidCases;
     }
 }
 
