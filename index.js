@@ -1,4 +1,7 @@
 const express = require('express');
+const CovidJsonService = require('./services/CovidJsonService');
+
+const covidJsonService = new CovidJsonService();
 
 // Database
 const db = require('./config/database')
@@ -16,9 +19,10 @@ app.use(require('./routes/CovidCases'));
 
 //Schedule
 setInterval(function(){
-	 console.log("Hello"); 
+	covidJsonService.insertNewValuesToDb();
+	 console.log("Create query executed."); 
 	},
-	3000
+	600000 //600000 == 10 minutos
 );
 
 app.listen(PORT, console.log(`Server startet at port ${PORT}`));

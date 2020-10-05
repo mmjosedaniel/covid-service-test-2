@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 	const idTest = "10";
 	const temp = await covidJsonService.fetchCovidCases();
 
-	res.json(await covidJsonService.insertNewValuesToDb());
+	res.json(await covidJsonService.fetchCovidCases());
 });
 
 module.exports = router;

@@ -161,3 +161,5 @@ const temp = await CovidCase.findAll({
 console.log(temp);
 
 ```
+
+I created the function insertNewValuesToDb() to insert the new data from the web covid Json API to the database, and I used setInterval() to execute it each ten minutes.

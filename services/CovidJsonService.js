@@ -18,6 +18,11 @@ class CovidJsonService {
         return cases
     }
 
+    /**
+     * inset the new values intoi the database.
+     * 
+     * @return json with the new covid cases.
+     */
     async insertNewValuesToDb() {
         const totalCase = await CovidCase.findAll();
         console.log(totalCase)
