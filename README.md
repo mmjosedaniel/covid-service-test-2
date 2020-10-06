@@ -163,3 +163,7 @@ console.log(temp);
 ```
 
 I created the function insertNewValuesToDb() to insert the new data from the web covid Json API to the database, and I used setInterval() to execute it each ten minutes.
+
+While I wasr coding my filter servise, I had an error, after some time I discovered that the error was that I named my service **CovidCaseDBService.jsx** and it is not react, so it has to be **CovidCaseDBService.js**.
+
+At the end, to give de requested data, I looked for how to implement list in JS, however what I found was arrays, for that reason, I desided to use map() and return the ids with the filter applyed.

@@ -1,5 +1,4 @@
 const fetch = require('node-fetch');
-const db = require('../config/database');
 const CovidCase = require('../models/CovidCase')
 
 class CovidJsonService {
